@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f082c8e76e585c90815d6abed3b4a65a",
+    "revision": "dc5d24d136b6844a5add771a5f4be661",
     "url": "/KH2-Rando-Tracker/index.html"
   },
   {

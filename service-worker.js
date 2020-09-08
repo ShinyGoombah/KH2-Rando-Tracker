@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/KH2-Rando-Tracker/precache-manifest.4e2d3f8a39b0b2bb5ec5dc980dd67265.js"
+  "/KH2-Rando-Tracker/precache-manifest.29d339b11d1c64bd84e61c9207e91abd.js"
 );
 
 self.addEventListener('message', (event) => {
