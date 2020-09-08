@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/KH2-Rando-Tracker/static/js/main.b6432587.chunk.js",
+    "main.js.map": "/KH2-Rando-Tracker/static/js/main.b6432587.chunk.js.map",
+    "runtime-main.js": "/KH2-Rando-Tracker/static/js/runtime-main.6e6800cc.js",
+    "runtime-main.js.map": "/KH2-Rando-Tracker/static/js/runtime-main.6e6800cc.js.map",
+    "static/js/2.a726cf7f.chunk.js": "/KH2-Rando-Tracker/static/js/2.a726cf7f.chunk.js",
+    "static/js/2.a726cf7f.chunk.js.map": "/KH2-Rando-Tracker/static/js/2.a726cf7f.chunk.js.map",
+    "index.html": "/KH2-Rando-Tracker/index.html",
+    "precache-manifest.4e2d3f8a39b0b2bb5ec5dc980dd67265.js": "/KH2-Rando-Tracker/precache-manifest.4e2d3f8a39b0b2bb5ec5dc980dd67265.js",
+    "service-worker.js": "/KH2-Rando-Tracker/service-worker.js",
+    "static/js/2.a726cf7f.chunk.js.LICENSE.txt": "/KH2-Rando-Tracker/static/js/2.a726cf7f.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6e6800cc.js",
+    "static/js/2.a726cf7f.chunk.js",
+    "static/js/main.b6432587.chunk.js"
+  ]
+}
