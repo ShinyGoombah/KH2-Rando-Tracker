@@ -1,12 +1,11 @@
-import React from 'react';
-import { Button } from 'semantic-ui-react';
+import * as React from 'react';
 import ReactDOM from 'react-dom';
-import 'semantic-ui-css/semantic.min.css';
+import App from './components/App';
+import '../public/semantic/build/semantic.min.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Button
-      content="Test Button" />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

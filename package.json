@@ -6,32 +6,24 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "awesome-typescript-loader": "^5.2.1",
-    "copy-webpack-plugin": "^6.1.0",
     "css-loader": "^4.3.0",
-    "gh-pages": "^3.1.0",
     "less-loader": "^7.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3",
-    "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^1.2.1",
-    "source-map-loader": "^1.1.0",
     "style-loader": "^1.2.1",
+    "url-loader": "^4.1.0"
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "^5.2.1",
+    "source-map-loader": "^1.1.0",
     "typescript": "^4.0.2",
     "webpack": "^4.44.1",
-    "webpack-clean-plugin": "^0.2.3",
-    "webpack-cli": "^3.3.12",
-    "webpack-shell-plugin": "^0.5.0"
+    "webpack-cli": "^3.3.12"
   },
   "scripts": {
-    "start": "react-scripts start",
     "build-dev": "webpack --mode development",
-    "build-prod": "webpack --mode production",
-    "test": "react-scripts test",
-    "predeploy": "yarn run build",
-    "deploy": "gh-pages -d  build",
-    "eject": "react-scripts eject"
+    "build-prod": "webpack --mode production"
   },
   "eslintConfig": {
     "extends": "react-app"

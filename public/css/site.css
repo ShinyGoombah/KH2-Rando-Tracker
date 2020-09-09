@@ -3,11 +3,11 @@ for details on configuring this project to bundle and minify static web assets. 
 
 @font-face {
   font-family: 'KHFont';
-  src: url('../lib/fonts/KH2ALLMENUI.eot');
-  src: url('../lib/fonts/KH2ALLMENUI.woff') format('woff'),
-  url('../lib/fonts/KH2ALLMENUI.svg') format('svg'),
-  url('../lib/fonts/KH2ALLMENUI.woff2') format('woff2'),
-  url('../lib/fonts/KH2ALLMENUI.ttf') format('truetype');
+  src: url('../fonts/KH2ALLMENUI.eot');
+  src: url('../fonts/KH2ALLMENUI.woff') format('woff'),
+  url('../fonts/KH2ALLMENUI.svg') format('svg'),
+  url('../fonts/KH2ALLMENUI.woff2') format('woff2'),
+  url('../fonts/KH2ALLMENUI.ttf') format('truetype');
 }
 
 
@@ -64,7 +64,7 @@ html {
 }
 
 body {
-    background-image: url("Background.jpg");
+    background-image: url("../images/Background.jpg");
     background-color: #0b154f;
     background-position: center;
     background-repeat: no-repeat;
