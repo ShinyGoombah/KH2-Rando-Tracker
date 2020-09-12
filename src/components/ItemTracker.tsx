@@ -591,7 +591,7 @@ export default class ItemTracker extends React.Component<ItemTrackerProps, ItemT
                     }}
                   >
                     <Image className="form-level" style={ability.level === 0 ? {display: 'none'} : {}} src={`public/images/numbers/${ability.level}.png`} />
-                    <Image className="form" style={ability.level === 0 ? {opacity: '0.30'} : {}} src={`public/images/growth abilities/${ability.abilityName.toLowerCase}.png`} />
+                    <Image className="form" style={ability.level === 0 ? {opacity: '0.30'} : {}} src={`public/images/growth abilities/${ability.abilityName}.png`} />
                   </Grid.Column>
                 );
               })
