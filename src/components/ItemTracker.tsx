@@ -51,58 +51,22 @@ export default class ItemTracker extends React.Component<ItemTrackerProps, ItemT
     this.state = {
       worlds: [
         {
-          worldName: 'hundredAcre',
+          worldName: 'simTT',
           foundItems: 0,
-          totalChecks: 24,
-          defaultTotal: 24,
-          displayedImage: '100 Acre Wood.png',
-          completeImg: '100 Acre Wood Complete.png',
-          incompleteImg: '100 Acre Wood.png'
+          totalChecks: 27,
+          defaultTotal: 27,
+          displayedImage: 'Simulated TT.png',
+          completeImg: 'Simulated TT Complete.png',
+          incompleteImg: 'Simulated TT.png'
         },
         {
-          worldName: 'agrabah',
+          worldName: 'twilightTown',
           foundItems: 0,
-          totalChecks: 34,
-          defaultTotal: 34,
-          displayedImage: 'Agrabah.png',
-          completeImg: 'Agrabah Complete.png',
-          incompleteImg: 'Agrabah.png'
-        },
-        {
-          worldName: 'atlantica',
-          foundItems: 0,
-          totalChecks: 4,
-          defaultTotal: 4,
-          displayedImage: 'Atlantica.png',
-          completeImg: 'Atlantica Complete.png',
-          incompleteImg: 'Atlantica.png'
-        },
-        {
-          worldName: 'beastCastle',
-          foundItems: 0,
-          totalChecks: 28,
-          defaultTotal: 28,
-          displayedImage: 'Beast Castle.png',
-          completeImg: 'Beast Castle Complete.png',
-          incompleteImg: 'Beast Castle.png'
-        },
-        {
-          worldName: 'disneyCastle',
-          foundItems: 0,
-          totalChecks: 26,
-          defaultTotal: 26,
-          displayedImage: 'Disney Castle.png',
-          completeImg: 'Disney Castle Complete.png',
-          incompleteImg: 'Disney Castle.png'
-        },
-        {
-          worldName: 'halloweenTown',
-          foundItems: 0,
-          totalChecks: 21,
-          defaultTotal: 21,
-          displayedImage: 'Halloween Town.png',
-          completeImg: 'Halloween Town Complete.png',
-          incompleteImg: 'Halloween Town.png'
+          totalChecks: 44,
+          defaultTotal: 44,
+          displayedImage: 'Twilight Town.png',
+          completeImg: 'Twilight Town Complete.png',
+          incompleteImg: 'Twilight Town.png'
         },
         {
           worldName: 'hollowBastion',
@@ -123,6 +87,15 @@ export default class ItemTracker extends React.Component<ItemTrackerProps, ItemT
           incompleteImg: 'Land of Dragons.png'
         },
         {
+          worldName: 'beastCastle',
+          foundItems: 0,
+          totalChecks: 28,
+          defaultTotal: 28,
+          displayedImage: 'Beast Castle.png',
+          completeImg: 'Beast Castle Complete.png',
+          incompleteImg: 'Beast Castle.png'
+        },
+        {
           worldName: 'olympusColiseum',
           foundItems: 0,
           totalChecks: 42,
@@ -141,6 +114,24 @@ export default class ItemTracker extends React.Component<ItemTrackerProps, ItemT
           incompleteImg: 'Port Royal.png'
         },
         {
+          worldName: 'agrabah',
+          foundItems: 0,
+          totalChecks: 34,
+          defaultTotal: 34,
+          displayedImage: 'Agrabah.png',
+          completeImg: 'Agrabah Complete.png',
+          incompleteImg: 'Agrabah.png'
+        },
+        {
+          worldName: 'halloweenTown',
+          foundItems: 0,
+          totalChecks: 21,
+          defaultTotal: 21,
+          displayedImage: 'Halloween Town.png',
+          completeImg: 'Halloween Town Complete.png',
+          incompleteImg: 'Halloween Town.png'
+        },
+        {
           worldName: 'prideLands',
           foundItems: 0,
           totalChecks: 29,
@@ -150,13 +141,13 @@ export default class ItemTracker extends React.Component<ItemTrackerProps, ItemT
           incompleteImg: 'Pride Lands.png'
         },
         {
-          worldName: 'simTT',
+          worldName: 'disneyCastle',
           foundItems: 0,
-          totalChecks: 27,
-          defaultTotal: 27,
-          displayedImage: 'Simulated TT.png',
-          completeImg: 'Simulated TT Complete.png',
-          incompleteImg: 'Simulated TT.png'
+          totalChecks: 26,
+          defaultTotal: 26,
+          displayedImage: 'Disney Castle.png',
+          completeImg: 'Disney Castle Complete.png',
+          incompleteImg: 'Disney Castle.png'
         },
         {
           worldName: 'spaceParanoids',
@@ -168,15 +159,6 @@ export default class ItemTracker extends React.Component<ItemTrackerProps, ItemT
           incompleteImg: 'Space Paranoids.png'
         },
         {
-          worldName: 'twilightTown',
-          foundItems: 0,
-          totalChecks: 44,
-          defaultTotal: 44,
-          displayedImage: 'Twilight Town.png',
-          completeImg: 'Twilight Town Complete.png',
-          incompleteImg: 'Twilight Town.png'
-        },
-        {
           worldName: 'twtnw',
           foundItems: 0,
           totalChecks: 37,
@@ -184,6 +166,24 @@ export default class ItemTracker extends React.Component<ItemTrackerProps, ItemT
           displayedImage: 'The World That Never Was.png',
           completeImg: 'The World That Never Was Complete.png',
           incompleteImg: 'The World That Never Was.png'
+        },
+        {
+          worldName: 'atlantica',
+          foundItems: 0,
+          totalChecks: 4,
+          defaultTotal: 4,
+          displayedImage: 'Atlantica.png',
+          completeImg: 'Atlantica Complete.png',
+          incompleteImg: 'Atlantica.png'
+        },
+        {
+          worldName: 'hundredAcre',
+          foundItems: 0,
+          totalChecks: 24,
+          defaultTotal: 24,
+          displayedImage: '100 Acre Wood.png',
+          completeImg: '100 Acre Wood Complete.png',
+          incompleteImg: '100 Acre Wood.png'
         },
       ],
       forms: [
