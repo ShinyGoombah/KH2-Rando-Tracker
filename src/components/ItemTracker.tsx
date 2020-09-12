@@ -235,28 +235,28 @@ export default class ItemTracker extends React.Component<ItemTrackerProps, ItemT
       ],
       growthAbilities: [
         {
-          abilityName: 'highJump',
+          abilityName: 'highjump',
           imageId: 'hjImage',
           levelId: 'hjLevel',
           levelImage: 'hjNumber',
           level: 0,
         },
         {
-          abilityName: 'quickRun',
+          abilityName: 'quickrun',
           imageId: 'qrImage',
           levelId: 'qrLevel',
           levelImage: 'qrNumber',
           level: 0,
         },
         {
-          abilityName: 'dodgeRoll',
+          abilityName: 'dodgeroll',
           imageId: 'drImage',
           levelId: 'drLevel',
           levelImage: 'drNumber',
           level: 0,
         },
         {
-          abilityName: 'aerialDodge',
+          abilityName: 'aerialdodge',
           imageId: 'adImage',
           levelId: 'adLevel',
           levelImage: 'adNumber',
