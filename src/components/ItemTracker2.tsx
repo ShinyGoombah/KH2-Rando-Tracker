@@ -49,8 +49,8 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
             type: 'world',
             worldName: 'twilightTown',
             foundItems: 0,
-            totalChecks: 44,
-            defaultTotal: 44,
+            totalChecks: 51,
+            defaultTotal: 51,
             displayImage: 'Twilight Town.png',
             completeImg: 'Twilight Town Complete.png',
             incompleteImg: 'Twilight Town.png'
@@ -79,8 +79,8 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
             type: 'world',
             worldName: 'beastCastle',
             foundItems: 0,
-            totalChecks: 28,
-            defaultTotal: 28,
+            totalChecks: 29,
+            defaultTotal: 29,
             displayImage: 'Beast Castle.png',
             completeImg: 'Beast Castle Complete.png',
             incompleteImg: 'Beast Castle.png'
@@ -163,8 +163,8 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
             type: 'world',
             worldName: 'twtnw',
             foundItems: 0,
-            totalChecks: 37,
-            defaultTotal: 37,
+            totalChecks: 31,
+            defaultTotal: 31,
             displayImage: 'The World That Never Was.png',
             completeImg: 'The World That Never Was Complete.png',
             incompleteImg: 'The World That Never Was.png'
