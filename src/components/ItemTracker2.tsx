@@ -565,7 +565,7 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
                               <Image style={item.foundItems === 0 ? {opacity: '0.30'} : {}} src={`public/images/worlds/${item.displayImage}`} />
                               <Label
                                 className="world-checks"
-                                content={`${item.foundItems} / ${item.totalChecks}`}
+                                content={`${item.foundItems}/${item.totalChecks}`}
                               />
                             </Container>
                           </Table.Cell>

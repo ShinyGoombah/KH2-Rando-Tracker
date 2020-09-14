@@ -10,6 +10,9 @@ for details on configuring this project to bundle and minify static web assets. 
   url('../fonts/KH2ALLMENUI.ttf') format('truetype');
 }
 
+.monospace {
+  font-family: "Lucida Console", Courier, monospace;
+}
 
 a.navbar-brand {
   white-space: normal;
@@ -128,7 +131,7 @@ img {
 }
 div.images {
     width: 100px;
-    height: 100px;
+    height: 110px;
     position: relative;
     text-align: center;
 }
@@ -214,11 +217,12 @@ td {
   overflow: hidden;
 }
 div.world-checks {
-  font-family: 'KHFont';
-  font-size: 14px;
+  font-family: "Lucida Console", Courier, monospace;
+  font-size: 30px;
   background-color: transparent;
   background-image: none;
   color: white;
+  font-weight: bold;
 }
 h1 {
     text-align: left;
