@@ -533,6 +533,14 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
     }
   }
 
+  public handleScroll(event: any, data: any): void {
+    if (event.deltaY < 0) {
+      this.increaseWorldCheck(data);
+    } else {
+      this.decreaseWorldCheck(data);
+    }
+  }
+
   public render(): React.ReactNode {
     const {
       rows
@@ -560,6 +568,7 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
                             onContextMenu={(): void => {
                               this.decreaseWorldCheck(item);
                             }}
+                            onWheel={(e: any) => { this.handleScroll(e, item)}}
                           >
                             <Container className="images">
                               <Image style={item.foundItems === 0 ? {opacity: '0.30'} : {}} src={`public/images/worlds/${item.displayImage}`} />

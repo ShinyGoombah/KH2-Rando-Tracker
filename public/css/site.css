@@ -73,6 +73,7 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
+    margin: 0px;
 }
 div.main-grid {
   width: 100%;
