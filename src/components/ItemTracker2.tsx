@@ -392,27 +392,33 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
 
     let myWorldSettings: any;
     let myAdditionalSettings: any;
+    let asSetting: any;
+    let doSetting: any;
+    let occSetting: any;
+    let hcSetting: any;
+    let lwSetting: any;
+    let sephSetting: any;
+    let pcSetting = true;
 
     if (retrievedWorldSettings && retrievedAdditionalSettings) {
       myWorldSettings = JSON.parse(retrievedWorldSettings);
       myAdditionalSettings = JSON.parse(retrievedAdditionalSettings);
+
+      asSetting = myAdditionalSettings.find((item: any) => item.key === 'absentSillhouettes').active;
+      doSetting = myAdditionalSettings.find((item: any) => item.key === 'dataOrg').active;
+      occSetting = myAdditionalSettings.find((item: any) => item.key === 'ocCups').active;
+      hcSetting = myAdditionalSettings.find((item: any) => item.key === 'hadesCup').active;
+      lwSetting = myAdditionalSettings.find((item: any) => item.key === 'lingeringWill').active;
+      sephSetting = myAdditionalSettings.find((item: any) => item.key === 'sephiroth').active;
+      pcSetting = myAdditionalSettings.find((item: any) => item.key === 'promiseCharm').active;
     }
 
-    const asSetting = myAdditionalSettings.find((item: any) => item.key === 'absentSillhouettes').active;
-    const doSetting = myAdditionalSettings.find((item: any) => item.key === 'dataOrg').active;
-    const occSetting = myAdditionalSettings.find((item: any) => item.key === 'ocCups').active;
-    const hcSetting = myAdditionalSettings.find((item: any) => item.key === 'hadesCup').active;
-    const lwSetting = myAdditionalSettings.find((item: any) => item.key === 'lingeringWill').active;
-    const sephSetting = myAdditionalSettings.find((item: any) => item.key === 'sephiroth').active;
-    const pcSetting = myAdditionalSettings.find((item: any) => item.key === 'promiseCharm').active;
-    
     worlds.forEach(world => {
       const updatedRow = rows.find(row => row.find(item => item.worldName === world.worldName));
 
       if (updatedRow) {
         if (myWorldSettings && myAdditionalSettings) {
           const filteredSettings = myWorldSettings.filter((setting: any) => setting.key.includes(world.worldName));
-          console.log(filteredSettings);
           
           if (filteredSettings) {
             if (world.displayedTotal === 0) {
