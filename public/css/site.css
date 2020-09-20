@@ -79,14 +79,14 @@ div.ui.checked.toggle.checkbox {
 .ui.header.settings-header {
   font-family: 'KHFont';
   text-decoration: underline;
-  color: gold;
+  color: white;
   font-size: 25px;
 }
 
 .settings-container {
   width: fit-content;
   height: fit-content;
-  background-color: #530dca;
+  background-color: #7b7b7b;
   overflow: hidden;
   padding: 10px;
 }
