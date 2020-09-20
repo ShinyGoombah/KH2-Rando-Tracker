@@ -7,8 +7,14 @@ type RowItemArray = {
   type: string;
   worldName?: string;
   foundItems?: number;
-  totalChecks?: number;
-  defaultTotal?: number;
+  worldChecks?: number;
+  dataOrg?: number;
+  absentSillhouette?: number;
+  superBoss?: number;
+  subSection?: number;
+  ocCups?: number;
+  hadesCup?: number;
+  displayedTotal?: number;
   displayImage?: string;
   completeImg?: string;
   incompleteImg?: string;
@@ -26,6 +32,7 @@ type RowItemArray = {
 
 type ItemTrackerState = {
   rows: RowItemArray[];
+  pcSetting: boolean;
 };
 
 export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, ItemTrackerState> {
@@ -39,8 +46,9 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
             type: 'world',
             worldName: 'simTT',
             foundItems: 0,
-            totalChecks: 27,
-            defaultTotal: 27,
+            worldChecks: 26,
+            dataOrg: 1,
+            displayedTotal: 0,
             displayImage: 'Simulated TT.png',
             completeImg: 'Simulated TT Complete.png',
             incompleteImg: 'Simulated TT.png'
@@ -49,8 +57,9 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
             type: 'world',
             worldName: 'twilightTown',
             foundItems: 0,
-            totalChecks: 51,
-            defaultTotal: 51,
+            worldChecks: 50,
+            dataOrg: 1,
+            displayedTotal: 0,
             displayImage: 'Twilight Town.png',
             completeImg: 'Twilight Town Complete.png',
             incompleteImg: 'Twilight Town.png'
@@ -59,8 +68,11 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
             type: 'world',
             worldName: 'hollowBastion',
             foundItems: 0,
-            totalChecks: 61,
-            defaultTotal: 61,
+            worldChecks: 38,
+            dataOrg: 1,
+            superBoss: 1,
+            subSection: 21,
+            displayedTotal: 0,
             displayImage: 'Hollow Bastion.png',
             completeImg: 'Hollow Bastion Complete.png',
             incompleteImg: 'Hollow Bastion.png'
@@ -69,8 +81,9 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
             type: 'world',
             worldName: 'landOfDragons',
             foundItems: 0,
-            totalChecks: 29,
-            defaultTotal: 29,
+            worldChecks: 28,
+            dataOrg: 1,
+            displayedTotal: 0,
             displayImage: 'Land of Dragons.png',
             completeImg: 'Land of Dragons Complete.png',
             incompleteImg: 'Land of Dragons.png'
@@ -79,8 +92,9 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
             type: 'world',
             worldName: 'beastCastle',
             foundItems: 0,
-            totalChecks: 29,
-            defaultTotal: 29,
+            worldChecks: 28,
+            dataOrg: 1,
+            displayedTotal: 0,
             displayImage: 'Beast Castle.png',
             completeImg: 'Beast Castle Complete.png',
             incompleteImg: 'Beast Castle.png'
@@ -91,8 +105,12 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
             type: 'world',
             worldName: 'olympusColiseum',
             foundItems: 0,
-            totalChecks: 42,
-            defaultTotal: 42,
+            worldChecks: 31,
+            dataOrg: 1,
+            absentSillhouette: 1,
+            ocCups: 8,
+            hadesCup: 1,
+            displayedTotal: 0,
             displayImage: 'Olympus Coliseum.png',
             completeImg: 'Olympus Coliseum Complete.png',
             incompleteImg: 'Olympus Coliseum.png'
@@ -101,8 +119,9 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
             type: 'world',
             worldName: 'portRoyal',
             foundItems: 0,
-            totalChecks: 31,
-            defaultTotal: 31,
+            worldChecks: 30,
+            dataOrg: 1,
+            displayedTotal: 0,
             displayImage: 'Port Royal.png',
             completeImg: 'Port Royal Complete.png',
             incompleteImg: 'Port Royal.png'
@@ -111,8 +130,10 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
             type: 'world',
             worldName: 'agrabah',
             foundItems: 0,
-            totalChecks: 34,
-            defaultTotal: 34,
+            worldChecks: 32,
+            dataOrg: 1,
+            absentSillhouette: 1,
+            displayedTotal: 0,
             displayImage: 'Agrabah.png',
             completeImg: 'Agrabah Complete.png',
             incompleteImg: 'Agrabah.png'
@@ -121,8 +142,10 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
             type: 'world',
             worldName: 'halloweenTown',
             foundItems: 0,
-            totalChecks: 21,
-            defaultTotal: 21,
+            worldChecks: 19,
+            dataOrg: 1,
+            absentSillhouette: 1,
+            displayedTotal: 0,
             displayImage: 'Halloween Town.png',
             completeImg: 'Halloween Town Complete.png',
             incompleteImg: 'Halloween Town.png'
@@ -131,8 +154,9 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
             type: 'world',
             worldName: 'prideLands',
             foundItems: 0,
-            totalChecks: 29,
-            defaultTotal: 29,
+            worldChecks: 28,
+            dataOrg: 1,
+            displayedTotal: 0,
             displayImage: 'Pride Lands.png',
             completeImg: 'Pride Lands Complete.png',
             incompleteImg: 'Pride Lands.png'
@@ -143,8 +167,12 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
             type: 'world',
             worldName: 'disneyCastle',
             foundItems: 0,
-            totalChecks: 26,
-            defaultTotal: 26,
+            worldChecks: 10,
+            subSection: 12,
+            dataOrg: 1,
+            absentSillhouette: 1,
+            superBoss: 2,
+            displayedTotal: 0,
             displayImage: 'Disney Castle.png',
             completeImg: 'Disney Castle Complete.png',
             incompleteImg: 'Disney Castle.png'
@@ -153,8 +181,10 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
             type: 'world',
             worldName: 'spaceParanoids',
             foundItems: 0,
-            totalChecks: 20,
-            defaultTotal: 20,
+            worldChecks: 18,
+            dataOrg: 1,
+            absentSillhouette: 1,
+            displayedTotal: 0,
             displayImage: 'Space Paranoids.png',
             completeImg: 'Space Paranoids Complete.png',
             incompleteImg: 'Space Paranoids.png'
@@ -163,8 +193,9 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
             type: 'world',
             worldName: 'twtnw',
             foundItems: 0,
-            totalChecks: 31,
-            defaultTotal: 31,
+            worldChecks: 30,
+            dataOrg: 1,
+            displayedTotal: 0,
             displayImage: 'The World That Never Was.png',
             completeImg: 'The World That Never Was Complete.png',
             incompleteImg: 'The World That Never Was.png'
@@ -173,8 +204,8 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
             type: 'world',
             worldName: 'atlantica',
             foundItems: 0,
-            totalChecks: 4,
-            defaultTotal: 4,
+            worldChecks: 4,
+            displayedTotal: 0,
             displayImage: 'Atlantica.png',
             completeImg: 'Atlantica Complete.png',
             incompleteImg: 'Atlantica.png'
@@ -183,8 +214,8 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
             type: 'world',
             worldName: 'hundredAcre',
             foundItems: 0,
-            totalChecks: 24,
-            defaultTotal: 24,
+            worldChecks: 24,
+            displayedTotal: 0,
             displayImage: '100 Acre Wood.png',
             completeImg: '100 Acre Wood Complete.png',
             incompleteImg: '100 Acre Wood.png'
@@ -343,23 +374,120 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
             itemFound: false,
           }
         ],
-      ]
+      ],
+      pcSetting: true
     }
   }
 
-  public increaseWorldCheck(world: any): void {
+  componentDidMount = () => {
+    this.calculateChecks();
+  }
+
+  calculateChecks = () => {
+    const { rows } = this.state;
+
+    const worlds = [...rows[0], ...rows[1], ...rows[2]];
+    const retrievedWorldSettings = localStorage.getItem('trackerWorldSettings');
+    const retrievedAdditionalSettings = localStorage.getItem('trackerAdditionalSettings');
+
+    let myWorldSettings: any;
+    let myAdditionalSettings: any;
+
+    if (retrievedWorldSettings && retrievedAdditionalSettings) {
+      myWorldSettings = JSON.parse(retrievedWorldSettings);
+      myAdditionalSettings = JSON.parse(retrievedAdditionalSettings);
+    }
+
+    const asSetting = myAdditionalSettings.find((item: any) => item.key === 'absentSillhouettes').active;
+    const doSetting = myAdditionalSettings.find((item: any) => item.key === 'dataOrg').active;
+    const occSetting = myAdditionalSettings.find((item: any) => item.key === 'ocCups').active;
+    const hcSetting = myAdditionalSettings.find((item: any) => item.key === 'hadesCup').active;
+    const lwSetting = myAdditionalSettings.find((item: any) => item.key === 'lingeringWill').active;
+    const sephSetting = myAdditionalSettings.find((item: any) => item.key === 'sephiroth').active;
+    const pcSetting = myAdditionalSettings.find((item: any) => item.key === 'promiseCharm').active;
+    
+    worlds.forEach(world => {
+      const updatedRow = rows.find(row => row.find(item => item.worldName === world.worldName));
+
+      if (updatedRow) {
+        if (myWorldSettings && myAdditionalSettings) {
+          const filteredSettings = myWorldSettings.filter((setting: any) => setting.key.includes(world.worldName));
+          console.log(filteredSettings);
+          
+          if (filteredSettings) {
+            if (world.displayedTotal === 0) {
+              if (world.worldChecks && filteredSettings[0].active) {
+                world.displayedTotal = world.displayedTotal + world.worldChecks;
+
+                if (asSetting && world.absentSillhouette) {
+                  world.displayedTotal = world.displayedTotal + world.absentSillhouette;
+                }
+                if (doSetting && world.dataOrg) {
+                  world.displayedTotal = world.displayedTotal + world.dataOrg;
+                }
+                if (occSetting && world.ocCups) {
+                  world.displayedTotal = world.displayedTotal + world.ocCups;
+  
+                  if (hcSetting && world.hadesCup) {
+                    world.displayedTotal = world.displayedTotal + world.hadesCup;
+                  }
+                }
+                if (world.superBoss) {
+                  if ((world.worldName === 'disneyCastle' && lwSetting) || (world.worldName === 'hollowBastion' && sephSetting)) {
+                    world.displayedTotal = world.displayedTotal + world.superBoss;
+                  }
+                }
+              }
+              if (world.subSection && filteredSettings.length === 2 && filteredSettings[1].active) {
+                world.displayedTotal = world.displayedTotal + world.subSection;
+              }
+            }
+          }
+        } else {
+          if (world.displayedTotal === 0 && world.worldChecks) {
+            world.displayedTotal = world.displayedTotal + world.worldChecks;
+
+            if (world.dataOrg) {
+              world.displayedTotal = world.displayedTotal + world.dataOrg;
+            }
+            if (world.absentSillhouette) {
+              world.displayedTotal = world.displayedTotal + world.absentSillhouette;
+            }
+            if (world.superBoss) {
+              world.displayedTotal = world.displayedTotal + world.superBoss;
+            }
+            if (world.subSection) {
+              world.displayedTotal = world.displayedTotal + world.subSection;
+            }
+            if (world.ocCups && world.hadesCup) {
+              world.displayedTotal = world.displayedTotal + world.ocCups + world.hadesCup;
+            }
+          }
+        }
+
+        const itemIndex = updatedRow.findIndex(item => item.worldName === world.worldName);
+        updatedRow[itemIndex] = world;
+        const rowIndex = rows.indexOf(updatedRow);
+        rows[rowIndex] = updatedRow;
+      }
+    });
+
+    this.setState({ rows, pcSetting });
+  }
+
+  increaseWorldCheck = (world: any): void => {
     const { rows } = this.state;
     const updatedRow = rows.find(row => row.find(item => item.worldName === world.worldName));
 
     if (updatedRow) {
-      if (world.foundItems < world.totalChecks) {
+      if (world.foundItems < world.displayedTotal) {
         world.foundItems++;
   
-        if (world.foundItems === world.totalChecks) {
+        if (world.foundItems === world.displayedTotal) {
           world.displayImage = world.completeImg;
         }
     
-        const itemIndex = updatedRow?.findIndex(item => item.worldName === world.worldName)
+        const itemIndex = updatedRow.findIndex(item => item.worldName === world.worldName);
         updatedRow[itemIndex] = world;
         const rowIndex = rows.indexOf(updatedRow);
         rows[rowIndex] = updatedRow;
@@ -368,7 +496,7 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
     }
   }
 
-  public decreaseWorldCheck(world: any): void {
+  decreaseWorldCheck = (world: any): void => {
     const { rows } = this.state;
     const updatedRow = rows.find(row => row.find(item => item.worldName === world.worldName));
 
@@ -376,11 +504,11 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
       if (world.foundItems > 0) {
         world.foundItems--;
   
-        if (world.foundItems === world.totalChecks - 1) {
+        if (world.foundItems === world.displayedTotal - 1) {
           world.displayImage = world.incompleteImg;
         }
     
-        const itemIndex = updatedRow?.findIndex(item => item.worldName === world.worldName)
+        const itemIndex = updatedRow.findIndex(item => item.worldName === world.worldName);
         updatedRow[itemIndex] = world;
         const rowIndex = rows.indexOf(updatedRow);
         rows[rowIndex] = updatedRow;
@@ -389,7 +517,7 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
     }
   }
 
-  public increaseMagicCheck(magic: any): void {
+  increaseMagicCheck = (magic: any): void => {
     const { rows } = this.state;
     const updatedRow = rows.find(row => row.find(item => item.firstSpell === magic.firstSpell));
 
@@ -412,7 +540,7 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
     }
   }
 
-  public decreaseMagicCheck(magic: any): void {
+  decreaseMagicCheck = (magic: any): void => {
     const { rows } = this.state;
     const updatedRow = rows.find(row => row.find(item => item.firstSpell === magic.firstSpell));
 
@@ -435,7 +563,7 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
     }
   }
 
-  public toggleCharm(charm: any): void {
+  toggleCharm = (charm: any): void => {
     const { rows } = this.state;
     const updatedRow = rows.find(row => row.find(item => item.displayImage === charm.displayImage));
 
@@ -450,7 +578,7 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
     }
   }
 
-  public formLevelUp(form: any): void {
+  formLevelUp = (form: any): void => {
     const { rows } = this.state;
     const updatedRow = rows.find(row => row.find(item => item.formName === form.formName));
 
@@ -469,7 +597,7 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
     }
   }
 
-  public toggleAuto(form: any): void {
+  toggleAuto = (form: any): void => {
     const { rows } = this.state;
     const updatedRow = rows.find(row => row.find(item => item.formName === form.formName));
 
@@ -484,7 +612,7 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
     }
   }
 
-  public abilityLevelUp(ability: any): void {
+  abilityLevelUp = (ability: any): void => {
     const { rows } = this.state;
     const updatedRow = rows.find(row => row.find(item => item.abilityName === ability.abilityName));
 
@@ -501,7 +629,7 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
     }
   }
 
-  public abilityLevelDown(ability: any): void {
+  abilityLevelDown = (ability: any): void => {
     const { rows } = this.state;
     const updatedRow = rows.find(row => row.find(item => item.abilityName === ability.abilityName));
 
@@ -518,7 +646,7 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
     }
   }
 
-  public toggleGoItem(goItem: any): void {
+  toggleGoItem = (goItem: any): void => {
     const { rows } = this.state;
     const updatedRow = rows.find(row => row.find(item => item.itemName === goItem.itemName));
 
@@ -533,7 +661,7 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
     }
   }
 
-  public handleScroll(event: any, data: any): void {
+  handleScroll = (event: any, data: any): void => {
     if (event.deltaY < 0) {
       this.increaseWorldCheck(data);
     } else {
@@ -543,24 +671,24 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
 
   public render(): React.ReactNode {
     const {
-      rows
+      rows,
+      pcSetting
     } = this.state;
 
     return (
-      <Table
+      <table
         className="trackerTable"
       >
-        <Table.Body>
+        <tbody>
           {
             rows.map(row => {
               return (
-                <Table.Row>
+                <tr>
                   {
                     row.map(item => {
                       if (item.type === 'world') {
                         return (
-                          <Table.Cell
-                            world={item}
+                          <td
                             className="world"
                             onClick={(): void => {
                               this.increaseWorldCheck(item);
@@ -570,21 +698,18 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
                             }}
                             onWheel={(e: any) => { this.handleScroll(e, item)}}
                           >
-                            <Container className="images">
-                              <Image style={item.foundItems === 0 ? {opacity: '0.30'} : {}} src={`public/images/worlds/${item.displayImage}`} />
-                              <Label
-                                className="world-checks"
-                                content={`${item.foundItems}/${item.totalChecks}`}
-                              />
-                            </Container>
-                          </Table.Cell>
+                            <div className="images">
+                              <img style={item.displayedTotal === 0 ? {} : {display: 'none'}} className='heartless-image' src='public/images/heartless.png' />
+                              <img style={item.foundItems === 0 ? {opacity: '0.30'} : {}} className='world-image' src={`public/images/worlds/${item.displayImage}`} />
+                              <div style={item.displayedTotal === 0 ? {display: 'none'} : {}} className="world-checks">{`${item.foundItems}/${item.displayedTotal}`}</div>
+                            </div>
+                          </td>
                         );
                       }
 
                       if (item.type === 'magic') {
                         return (
-                          <Table.Cell
-                            magic={item}
+                          <td
                             onClick={(): void => {
                               this.increaseMagicCheck(item);
                             }}
@@ -592,28 +717,26 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
                               this.decreaseMagicCheck(item);
                             }}
                           >
-                            <Image style={item.level === 0 ? {opacity: '0.30'} : {}} src={`public/images/magic/${item.displayImage}`} />
-                          </Table.Cell>
+                            <img style={item.level === 0 ? {opacity: '0.30'} : {}} src={`public/images/magic/${item.displayImage}`} />
+                          </td>
                         );
                       }
 
                       if (item.type === 'charm') {
                         return (
-                          <Table.Cell
-                            charm={item}
+                          <td
                             onClick={(): void => {
                               this.toggleCharm(item);
                             }}
                           >
-                            <Image style={!item.charmFound ? {opacity: '0.30'} : {}} src={`public/images/charms/${item.displayImage}`} />
-                          </Table.Cell>
+                            <img style={!item.charmFound ? {opacity: '0.30'} : {}} src={`public/images/charms/${item.displayImage}`} />
+                          </td>
                         );
                       }
 
                       if (item.type === 'form') {
                         return (
-                          <Table.Cell
-                            form={item}
+                          <td
                             onClick={(): void => {
                               this.formLevelUp(item);
                             }}
@@ -621,19 +744,18 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
                               this.toggleAuto(item);
                             }}
                           >
-                            <Container className="drive-ability">
-                              <Image className="triangle" style={!item.auto ? {display: 'none'} : {}} src={`public/images/triangle.png`} />
-                              <Image className="form-level" style={item.level === 0 ? {display: 'none'} : {}} src={`public/images/numbers/${item.level}.png`} />
-                              <Image className="form" style={item.level === 0 ? {opacity: '0.30'} : {}} src={`public/images/drive/${item.formName}.png`} />
-                            </Container>
-                          </Table.Cell>
+                            <div className="drive-ability">
+                              <img className="triangle" style={!item.auto ? {display: 'none'} : {}} src={`public/images/triangle.png`} />
+                              <img className="form-level" style={item.level === 0 ? {display: 'none'} : {}} src={`public/images/numbers/${item.level}.png`} />
+                              <img className="form" style={item.level === 0 ? {opacity: '0.30'} : {}} src={`public/images/drive/${item.formName}.png`} />
+                            </div>
+                          </td>
                         );
                       }
 
                       if (item.type === 'ability') {
                         return (
-                          <Table.Cell
-                            ability={item}
+                          <td
                             onClick={(): void => {
                               this.abilityLevelUp(item);
                             }}
@@ -641,35 +763,49 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
                               this.abilityLevelDown(item);
                             }}
                           >
-                            <Container className="drive-ability">
-                              <Image className="form-level" style={item.level === 0 ? {display: 'none'} : {}} src={`public/images/numbers/${item.level}.png`} />
-                              <Image className="form" style={item.level === 0 ? {opacity: '0.30'} : {}} src={`public/images/growth abilities/${item.abilityName}.png`} />
-                            </Container>
-                          </Table.Cell>
+                            <div className="drive-ability">
+                              <img className="form-level" style={item.level === 0 ? {display: 'none'} : {}} src={`public/images/numbers/${item.level}.png`} />
+                              <img className="form" style={item.level === 0 ? {opacity: '0.30'} : {}} src={`public/images/growth abilities/${item.abilityName}.png`} />
+                            </div>
+                          </td>
                         );
                       }
 
                       if (item.type === 'goMode') {
+                        if (item.itemName === 'promisecharm') {
+                          return (
+                            <td
+                              className="promise-container"
+                              onClick={(): void => {
+                                if (pcSetting) {
+                                  this.toggleGoItem(item);
+                                }
+                              }}
+                            >
+                              <img style={!pcSetting ? {} : {display: 'none'}} className='promise-heartless' src='public/images/heartless.png' />
+                              <img style={!item.itemFound ? {opacity: '0.30'} : {}} className='promise-image' src={`public/images/proofpromise/${item.itemName}.png`} />
+                            </td>
+                          );
+                        }
                         return (
-                          <Table.Cell
+                          <td
                             className="images"
-                            goItem={item}
                             onClick={(): void => {
                               this.toggleGoItem(item);
                             }}
                           >
-                            <Image style={!item.itemFound ? {opacity: '0.30'} : {}} src={`public/images/proofpromise/${item.itemName}.png`} />
-                          </Table.Cell>
+                            <img style={!item.itemFound ? {opacity: '0.30'} : {}} src={`public/images/proofpromise/${item.itemName}.png`} />
+                          </td>
                         );
                       }
                     })
                   }
-                </Table.Row>
+                </tr>
               );
             })
           }
-        </Table.Body>
-      </Table>
+        </tbody>
+      </table>
     );
   }
 }
