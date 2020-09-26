@@ -429,7 +429,6 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
       if (updatedRow) {
         if (myWorldSettings && myAdditionalSettings) {
           const filteredSettings = myWorldSettings.filter((setting: any) => setting.key.includes(world.worldName));
-          console.log(filteredSettings);
           if (filteredSettings) {
             if (world.displayedTotal === 0) {
               if (world.worldChecks && filteredSettings[0].active) {

@@ -17,7 +17,7 @@ ReactDOM.render(
   <React.StrictMode>
     <div className="main-grid">
       <div className="important-checks-tracker">
-        {/* <Tab panes={importantChecksPanes} /> */}
+        <Tab panes={importantChecksPanes} />
       </div>
       <div className="item-tracker">
         <Tab panes={itemTrackerPanes} />
