@@ -139,30 +139,41 @@ div.main-grid {
   grid-row: 1;
   grid-column: 2;
 }
-.section-template-left {
+.important-checks-tracker {
   grid-row: 1;
   grid-column: 1;
-  border-radius: 25px;
-  border: 5px solid #1c3ced;
   width: 90%;
-  overflow: hidden;
+  max-height: 90vh;
 }
-.section-template-right {
-  grid-row: 1;
-  grid-column: 3;
-  border-radius: 25px;
-  border: 5px solid #1c3ced;
-  width: 90%;
+
+.important-check-world-icon {
+  height: 40px;
+  width: 40px;
 }
-.footer {
-  color: white;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
-  background-color: black;
-  text-align: center;
+
+.important-check-window {
+  background-color: #3F3F3F;
+  height: 85vh;
+}
+
+.ui.button.add-button {
+  background-color: #0007ff;
+  color: gold;
+  font-family: 'KHFont';
+}
+
+.world-important-checks {
+  min-height: 100px;
+}
+
+.ui.button.unfound-check-item {
+  background-color: transparent;
+  padding: 0;
+}
+
+.unfound-item-image {
+  width: 40px;
+  height: 40px;
 }
 .footing {
   text-align: center;
@@ -221,8 +232,14 @@ div.drive-ability {
   position: relative;
   grid-template-columns: repeat(6, 1fr);
 }
-.column {
-  padding-bottom: 10px;
+.settings-grid-column {
+  padding-bottom: 5px;
+}
+
+.unfound-checks-grid {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  margin-right: 0 !important;
 }
 .data {
     width: 60px;

@@ -126,6 +126,7 @@ export default class ItemTrackerSettings extends React.Component<{}, ItemTracker
                   return (
                     <Grid.Column
                       style={{width: '400px'}}
+                      className="settings-grid-column"
                     >
                       <Form.Checkbox
                         name={world.key}
@@ -149,7 +150,7 @@ export default class ItemTrackerSettings extends React.Component<{}, ItemTracker
               {
                 additionalOptions.map(option => {
                   return (
-                    <Grid.Column>
+                    <Grid.Column className="settings-grid-column">
                       <Form.Checkbox
                         name={option.key}
                         toggle

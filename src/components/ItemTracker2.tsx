@@ -372,6 +372,16 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
             type: 'goMode',
             itemName: 'tranquilProof',
             itemFound: false,
+          },
+          {
+            type: 'world',
+            worldName: 'soraLevels',
+            foundItems: 0,
+            worldChecks: 23,
+            displayedTotal: 23,
+            displayImage: 'soraheart.png',
+            completeImg: 'soraheart.png',
+            incompleteImg: 'soraheart.png'
           }
         ],
       ],
@@ -419,7 +429,7 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
       if (updatedRow) {
         if (myWorldSettings && myAdditionalSettings) {
           const filteredSettings = myWorldSettings.filter((setting: any) => setting.key.includes(world.worldName));
-          
+          console.log(filteredSettings);
           if (filteredSettings) {
             if (world.displayedTotal === 0) {
               if (world.worldChecks && filteredSettings[0].active) {
@@ -706,7 +716,10 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
                           >
                             <div className="images">
                               <img style={item.displayedTotal === 0 ? {} : {display: 'none'}} className='heartless-image' src='public/images/heartless.png' />
-                              <img style={item.foundItems === 0 ? {opacity: '0.30'} : {}} className='world-image' src={`public/images/worlds/${item.displayImage}`} />
+                              <img
+                                style={item.foundItems === 0 ? {opacity: '0.30'} : {}}
+                                className='world-image'
+                                src={item.worldName === 'soraLevels' ? `public/images/${item.displayImage}` : `public/images/worlds/${item.displayImage}`} />
                               <div style={item.displayedTotal === 0 ? {display: 'none'} : {}} className="world-checks">{`${item.foundItems}/${item.displayedTotal}`}</div>
                             </div>
                           </td>
