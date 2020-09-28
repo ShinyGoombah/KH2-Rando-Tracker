@@ -1,6 +1,6 @@
 import * as React from 'react';
 import ReactDOM from 'react-dom';
-import { Tab } from 'semantic-ui-react';
+import { Menu, Tab, Icon } from 'semantic-ui-react';
 import ItemTrackerTwo from './components/ItemTracker2';
 import ItemTrackerSettings from './components/ItemTrackerSettings';
 import ImportantChecksTracker from './components/ImportantChecksTracker';

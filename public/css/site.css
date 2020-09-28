@@ -217,6 +217,11 @@ div.main-grid {
   max-width: 220px;
 }
 
+.info-icon {
+  color: white;
+  padding-left: 10px;
+}
+
 .world-check-item {
   padding: 0 0 0 0 !important;
   width: fit-content !important;

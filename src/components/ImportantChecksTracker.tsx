@@ -144,19 +144,19 @@ export default class ImportantChecksTracker extends React.Component<{}, Importan
         }
       ],
       unFoundChecks: [
-        { key: 'report1', image: 'secret_reports', found: false},
-        { key: 'report2', image: 'secret_reports', found: false},
-        { key: 'report3', image: 'secret_reports', found: false},
-        { key: 'report4', image: 'secret_reports', found: false},
-        { key: 'report5', image: 'secret_reports', found: false},
-        { key: 'report6', image: 'secret_reports', found: false},
-        { key: 'report7', image: 'secret_reports', found: false},
-        { key: 'report8', image: 'secret_reports', found: false},
-        { key: 'report9', image: 'secret_reports', found: false},
-        { key: 'report10', image: 'secret_reports', found: false},
-        { key: 'report11', image: 'secret_reports', found: false},
-        { key: 'report12', image: 'secret_reports', found: false},
-        { key: 'report13', image: 'secret_reports', found: false},
+        { key: 'report1', image: 'reports/report1', found: false},
+        { key: 'report2', image: 'reports/report2', found: false},
+        { key: 'report3', image: 'reports/report3', found: false},
+        { key: 'report4', image: 'reports/report4', found: false},
+        { key: 'report5', image: 'reports/report5', found: false},
+        { key: 'report6', image: 'reports/report6', found: false},
+        { key: 'report7', image: 'reports/report7', found: false},
+        { key: 'report8', image: 'reports/report8', found: false},
+        { key: 'report9', image: 'reports/report9', found: false},
+        { key: 'report10', image: 'reports/report10', found: false},
+        { key: 'report11', image: 'reports/report11', found: false},
+        { key: 'report12', image: 'reports/report12', found: false},
+        { key: 'report13', image: 'reports/report13', found: false},
         { key: 'fire1', image: 'magic/fire', found: false},
         { key: 'fire2', image: 'magic/fire', found: false},
         { key: 'fire3', image: 'magic/fire', found: false},
@@ -233,11 +233,17 @@ export default class ImportantChecksTracker extends React.Component<{}, Importan
 
   handleUnfoundItemClick = (foundItem: any) => {
     const { unFoundChecks, activeWorld, worlds } = this.state;
-    foundItem.found = !foundItem.found;
-    foundItem.worldIndex = worlds[activeWorld].index;
+    if (activeWorld !== -1) {
+      foundItem.found = !foundItem.found;
+      foundItem.worldIndex = worlds[activeWorld].index;    
 
-    if (foundItem.found) {
-      worlds[activeWorld].foundImportantChecks.push(foundItem);
+      if (foundItem.found) {
+        worlds[activeWorld].foundImportantChecks.push(foundItem);
+
+        if (worlds[activeWorld].foundImportantChecks.length > worlds[activeWorld].totalImportantChecks) {
+          worlds[activeWorld].totalImportantChecks = worlds[activeWorld].totalImportantChecks + 1;
+        }
+      }
     }
 
     const itemIndex = unFoundChecks.findIndex(check => check.key === foundItem.key);
@@ -246,7 +252,6 @@ export default class ImportantChecksTracker extends React.Component<{}, Importan
   }
 
   removeFoundCheck = (item: any) => {
-    console.log('Remove item');
     const { unFoundChecks, worlds } = this.state;
     item.found = !item.found
     
@@ -254,6 +259,9 @@ export default class ImportantChecksTracker extends React.Component<{}, Importan
       const checkIndex = worlds[item.worldIndex].foundImportantChecks.findIndex(check => check.key === item.key);
 
       worlds[item.worldIndex].foundImportantChecks.splice(checkIndex, 1);
+      if (worlds[item.worldIndex].foundImportantChecks.length === worlds[item.worldIndex].totalImportantChecks - 1) {
+        worlds[item.worldIndex].totalImportantChecks = worlds[item.worldIndex].totalImportantChecks - 1;
+      }
     }
 
     const itemIndex = unFoundChecks.findIndex(check => check.key === item.key);
@@ -278,7 +286,7 @@ export default class ImportantChecksTracker extends React.Component<{}, Importan
                 const splitString = totalString.split('');
                 if (world.totalImportantChecks < 10) {
                   return (
-                    <Grid.Column inline>
+                    <Grid.Column>
                       <div className="important-check-world-grid"
                         onClick={(): void => {
                           this.handleWorldSelection(world);
@@ -316,13 +324,13 @@ export default class ImportantChecksTracker extends React.Component<{}, Importan
                   );
                 }
                 return (
-                  <Grid.Column
-                    onClick={(): void => {
-                      this.handleWorldSelection(world);
-                    }}
-                    onWheel={(e: any) => { this.handleScroll(e, world)}}
-                  >
-                    <div className="important-check-world-grid">
+                  <Grid.Column>
+                    <div className="important-check-world-grid"
+                      onClick={(): void => {
+                        this.handleWorldSelection(world);
+                      }}
+                      onWheel={(e: any) => { this.handleScroll(e, world)}}
+                    >
                       <img
                         style={world.totalImportantChecks === 0 ? {display: 'none'} : {}}
                         className="world-icon-total-important-tens"
