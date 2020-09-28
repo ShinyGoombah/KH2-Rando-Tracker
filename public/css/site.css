@@ -143,6 +143,8 @@ div.main-grid {
   grid-row: 1;
   grid-column: 1;
   width: 90%;
+  min-width: 576px;
+  padding-right: 20px;
   max-height: 90vh;
 }
 
