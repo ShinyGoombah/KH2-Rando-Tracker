@@ -16,9 +16,9 @@ const importantChecksPanes = [
 ReactDOM.render(
   <React.StrictMode>
     <div className="main-grid">
-      <div className="important-checks-tracker">
+      {/* <div className="important-checks-tracker">
         <Tab panes={importantChecksPanes} />
-      </div>
+      </div> */}
       <div className="item-tracker">
         <Tab panes={itemTrackerPanes} />
       </div>
