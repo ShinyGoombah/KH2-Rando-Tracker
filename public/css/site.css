@@ -127,7 +127,7 @@ a.active.item {
 }
 div.main-grid {
   width: 100%;
-  height: 100vh;
+  height: 95vh;
   max-width: 100%;
   display: grid;
   position: relative;
@@ -146,6 +146,38 @@ div.main-grid {
   min-width: 576px;
   padding-right: 20px;
   max-height: 90vh;
+}
+
+.title-bar {
+  width: 100% !important;
+  background-color: #0a0d8e;
+  height: 30px;
+}
+
+.titlebar-setting-icon {
+  float: right;
+  padding-right: 30px;
+  padding-top: 5px;
+  cursor: pointer;
+}
+
+.ui.modal.settings-modal {
+  border: 1px solid #0007ff;
+}
+
+.ui.modal>.header.settings-modal-header {
+  background-color: #0007ff;
+  color: gold;
+  font-family: 'KHFont'
+}
+
+.ui.modal>.content.settings-modal-body {
+  background-color: #0a0d8e;
+  color: white;
+}
+
+.ui.modal>.actions.settings-modal-actions {
+  background-color: #0007ff;
 }
 
 .important-check-world-grid {
@@ -190,6 +222,7 @@ div.main-grid {
 }
 
 .important-check-window {
+  border: 1px solid black;
   background-color: #3F3F3F;
   height: 85vh;
   overflow: auto;

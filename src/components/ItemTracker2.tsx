@@ -1,7 +1,9 @@
 import React from 'react';
 import { Table, Container, ButtonProps, Image, Grid, Label } from 'semantic-ui-react';
 
-type ItemTrackerProps = {};
+type ItemTrackerProps = {
+  currentSettings: any;
+};
 
 type RowItemArray = {
   type: string;
@@ -393,69 +395,50 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
     this.calculateChecks();
   }
 
+  componentDidUpdate = (prevProps: any) => {
+    if (prevProps !== this.props) {
+      this.calculateChecks();
+    }
+  }
+
   calculateChecks = () => {
     const { rows } = this.state;
+    const { currentSettings } = this.props;
 
     const worlds = [...rows[0], ...rows[1], ...rows[2]];
-    const retrievedWorldSettings = localStorage.getItem('trackerWorldSettings');
-    const retrievedAdditionalSettings = localStorage.getItem('trackerAdditionalSettings');
-
-    let myWorldSettings: any;
-    let myAdditionalSettings: any;
-    let asSetting: any;
-    let doSetting: any;
-    let occSetting: any;
-    let hcSetting: any;
-    let lwSetting: any;
-    let sephSetting: any;
-    let pcSetting = true;
-
-    if (retrievedWorldSettings && retrievedAdditionalSettings) {
-      myWorldSettings = JSON.parse(retrievedWorldSettings);
-      myAdditionalSettings = JSON.parse(retrievedAdditionalSettings);
-
-      asSetting = myAdditionalSettings.find((item: any) => item.key === 'absentSillhouettes').active;
-      doSetting = myAdditionalSettings.find((item: any) => item.key === 'dataOrg').active;
-      occSetting = myAdditionalSettings.find((item: any) => item.key === 'ocCups').active;
-      hcSetting = myAdditionalSettings.find((item: any) => item.key === 'hadesCup').active;
-      lwSetting = myAdditionalSettings.find((item: any) => item.key === 'lingeringWill').active;
-      sephSetting = myAdditionalSettings.find((item: any) => item.key === 'sephiroth').active;
-      pcSetting = myAdditionalSettings.find((item: any) => item.key === 'promiseCharm').active;
-    }
 
     worlds.forEach(world => {
       const updatedRow = rows.find(row => row.find(item => item.worldName === world.worldName));
 
       if (updatedRow) {
-        if (myWorldSettings && myAdditionalSettings) {
-          const filteredSettings = myWorldSettings.filter((setting: any) => setting.key.includes(world.worldName));
+        if (currentSettings) {
+          const filteredSettings = currentSettings.worldSettings.filter((setting: any) => setting.key.includes(world.worldName));
           if (filteredSettings) {
-            if (world.displayedTotal === 0) {
-              if (world.worldChecks && filteredSettings[0].active) {
-                world.displayedTotal = world.displayedTotal + world.worldChecks;
+            world.displayedTotal = 0
+            if (world.worldChecks && filteredSettings[0].active) {
+              world.displayedTotal = world.displayedTotal + world.worldChecks;
 
-                if (asSetting && world.absentSillhouette) {
-                  world.displayedTotal = world.displayedTotal + world.absentSillhouette;
-                }
-                if (doSetting && world.dataOrg) {
-                  world.displayedTotal = world.displayedTotal + world.dataOrg;
-                }
-                if (occSetting && world.ocCups) {
-                  world.displayedTotal = world.displayedTotal + world.ocCups;
-  
-                  if (hcSetting && world.hadesCup) {
-                    world.displayedTotal = world.displayedTotal + world.hadesCup;
-                  }
-                }
-                if (world.superBoss) {
-                  if ((world.worldName === 'disneyCastle' && lwSetting) || (world.worldName === 'hollowBastion' && sephSetting)) {
-                    world.displayedTotal = world.displayedTotal + world.superBoss;
-                  }
+              if (currentSettings.additionalSettings[0].active && world.absentSillhouette) {
+                world.displayedTotal = world.displayedTotal + world.absentSillhouette;
+              }
+              if (currentSettings.additionalSettings[1].active && world.dataOrg) {
+                world.displayedTotal = world.displayedTotal + world.dataOrg;
+              }
+              if (currentSettings.additionalSettings[2].active && world.ocCups) {
+                world.displayedTotal = world.displayedTotal + world.ocCups;
+
+                if (currentSettings.additionalSettings[3].active && world.hadesCup) {
+                  world.displayedTotal = world.displayedTotal + world.hadesCup;
                 }
               }
-              if (world.subSection && filteredSettings.length === 2 && filteredSettings[1].active) {
-                world.displayedTotal = world.displayedTotal + world.subSection;
+              if (world.superBoss) {
+                if ((world.worldName === 'disneyCastle' && currentSettings.additionalSettings[4].active) || (world.worldName === 'hollowBastion' && currentSettings.additionalSettings[5].active)) {
+                  world.displayedTotal = world.displayedTotal + world.superBoss;
+                }
               }
+            }
+            if (world.subSection && filteredSettings.length === 2 && filteredSettings[1].active) {
+              world.displayedTotal = world.displayedTotal + world.subSection;
             }
           }
         } else {
@@ -487,7 +470,7 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
       }
     });
 
-    this.setState({ rows, pcSetting });
+    this.setState({ rows, pcSetting: currentSettings.additionalSettings[6].active });
   }
 
   increaseWorldCheck = (world: any): void => {
@@ -690,6 +673,11 @@ export default class ItemTrackerTwo extends React.Component<ItemTrackerProps, It
       pcSetting
     } = this.state;
 
+    const {
+      currentSettings
+    } = this.props;
+
+    console.log(currentSettings);
     return (
       <table
         className="trackerTable"

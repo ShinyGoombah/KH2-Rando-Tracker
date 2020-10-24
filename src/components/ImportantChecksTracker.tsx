@@ -1,6 +1,10 @@
 import React from 'react';
 import { Grid } from 'semantic-ui-react';
 
+type ImportantChecksTrackerProps = {
+  currentSettings: any;
+}
+
 type ImportantChecksTrackerState = {
   activeWorld: number;
   worlds: {
@@ -17,7 +21,7 @@ type ImportantChecksTrackerState = {
   }[];
 }
 
-export default class ImportantChecksTracker extends React.Component<{}, ImportantChecksTrackerState> {
+export default class ImportantChecksTracker extends React.Component<ImportantChecksTrackerProps, ImportantChecksTrackerState> {
   constructor(props: any) {
     super(props);
 
@@ -191,7 +195,6 @@ export default class ImportantChecksTracker extends React.Component<{}, Importan
         { key: 'masterForm', image: 'drive/master', found: false},
         { key: 'finalForm', image: 'drive/final', found: false},
 
-        { key: 'promiseCharm', image: 'proofpromise/promisecharm', found: false},
         { key: 'nonExistProof', image: 'proofpromise/nonExistentProof', found: false},
         { key: 'connectionProof', image: 'proofpromise/connectionProof', found: false},
         { key: 'peaceProof', image: 'proofpromise/tranquilProof', found: false},
@@ -207,6 +210,31 @@ export default class ImportantChecksTracker extends React.Component<{}, Importan
       ],
       activeWorld: -1
     }
+  }
+
+  componentDidMount = () => {
+    this.checkPromiseCharmSetting();
+  }
+
+  componentDidUpdate = (prevProps: any) => {
+    if (prevProps !== this.props) {
+      this.checkPromiseCharmSetting();
+    }
+  }
+
+  checkPromiseCharmSetting = () => {
+    const { unFoundChecks } = this.state;
+    const { currentSettings } = this.props;
+
+    const promiseCharmCheck = unFoundChecks.find((check: any) => check.key === 'promiseCharm');
+
+    if (promiseCharmCheck && !currentSettings.additionalSettings[6].active) {
+      unFoundChecks.splice(unFoundChecks.findIndex((check: any) => check.key === 'promiseCharm'), 1);
+    } else if (!promiseCharmCheck && currentSettings.additionalSettings[6].active) {
+      unFoundChecks.push({ key: 'promiseCharm', image: 'proofpromise/promisecharm', found: false});
+    }
+
+    this.setState({ unFoundChecks });
   }
 
   handleWorldSelection = (world: any) => {
